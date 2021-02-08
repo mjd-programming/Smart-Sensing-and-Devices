@@ -1,5 +1,5 @@
 # Smart Sensing and Devices
-GitHub repository used to hold files for Sania L and Michael D. README file contains project proposal.
+GitHub repository used to hold files for Sania L and Michael D. README.md file contains project proposal.
 
 ## Project Title: 
 ### Group Number: 8
@@ -7,7 +7,8 @@ GitHub repository used to hold files for Sania L and Michael D. README file cont
 Sania Latif, Michael D'Arcy
 
 ### Sensors:
-* something
+* Front facing camera
+* Microphone (Possibly)
 
 ### Abstract:
 
