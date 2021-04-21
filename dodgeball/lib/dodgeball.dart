@@ -8,6 +8,8 @@ import 'package:flutter/gestures.dart';
 import 'package:dodgeball/player.dart';
 import 'package:dodgeball/ball.dart';
 
+import 'package:sensors/sensors.dart';
+
 class Dodgeball extends Game {
   Size screenSize;
 
@@ -100,6 +102,26 @@ class Dodgeball extends Game {
 
   void update(double t) {
     if (running) {
+      if (!camera) {
+        accelerometerEvents.listen((AccelerometerEvent event) {
+          if (event.y < -2) {
+            player.action = "left";
+          } else if (event.y > 2) {
+            player.action = "right";
+          } else {
+            player.action = "idle";
+          }
+        });
+      } else {
+        // camera stuff in here
+        // force the camera to detect HEAVY left and right positions so the user
+        // can comfortably stay still in the middle without the camera
+        // detecting slight movement
+        //
+        // if (camera detects left) { player.action = "left";}
+        // if (camera detects right) { player.action = "right";}
+        // else player.action = "idle";
+      }
       player.update(t);
       ball.update(t);
     }
